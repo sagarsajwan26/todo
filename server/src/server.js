@@ -18,7 +18,13 @@ app.use(cors({
 
 }))
 
-
+app.use(async (req, res, next) => {
+  await connectDB();
+  next();
+});app.use(async (req, res, next) => {
+  await connectDB();
+  next();
+});
 
 import adminRouter from './routes/admin.route.js'
 app.get('/',(req,res)=>{
