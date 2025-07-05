@@ -2,6 +2,7 @@ import 'dotenv/config'
 import express from 'express'
 import { connectDB } from './db/db.js'
 import cors from 'cors'
+import cookieParser from 'cookie-parser'
 
 const PORT = process.env.PORT
 const app= express()
@@ -20,18 +21,11 @@ app.use(cors({
 
 
 import adminRouter from './routes/admin.route.js'
-import cookieParser from 'cookie-parser'
 app.get('/',(req,res)=>{
     res.send("hi")
 })
 app.use('/api/v1/admin',adminRouter)
 
 
-connectDB().then(()=>{
-app.listen(PORT,()=>{
-    console.log('SERVER STARTED AT ',PORT);
-    
-})
-})
-
- 
+connectDB()
+ export default app;
