@@ -6,7 +6,7 @@ import { getTasks, getUsers } from '../../store/adminThunk'
 
 function TaskboardMain() {
  const [tasks, setTasks] =useState([])
- const [sort, setSort]= useState('')
+ 
   const dispatch =  useDispatch()
 useEffect(()=>{
 dispatch(getTasks())
