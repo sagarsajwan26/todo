@@ -25,7 +25,7 @@ let userList= useSelector(state=> state.adminSlice.userList)
     
   }
 
-  useState(()=>{
+  useEffect(()=>{
     setUsers(userList)
   },[userList])
 

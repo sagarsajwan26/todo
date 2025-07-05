@@ -16,7 +16,7 @@ const [task, setTask] = useState({
 });
 
 useEffect(() => {
-  if (selectedTask && Object.keys(selectedTask).length > 0) {
+  if (selectedTask ) {
     setTask({
       title: selectedTask.title ?? '',
       description: selectedTask.description ?? '',
